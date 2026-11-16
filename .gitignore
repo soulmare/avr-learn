@@ -1,0 +1,5 @@
+# Keep the project-specific VS Code debugger configuration,
+# but ignore other editor/workspace files.
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json

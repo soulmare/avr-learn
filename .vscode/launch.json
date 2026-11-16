@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "AVR: Debug active asm file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.elf",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/avr-gdb",
+            "miDebuggerServerAddress": "localhost:1234",
+            "stopAtEntry": true,
+            "setupCommands": [
+                {
+                    "description": "Stop at the exercise entry point",
+                    "text": "break _start",
+                    "ignoreFailures": false
+                },
+                {
+                    "description": "Show the next instruction while stepping",
+                    "text": "set disassemble-next-line on",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "AVR: Start simulator",
+            "postDebugTask": "AVR: Stop simulator"
+        }
+    ]
+}

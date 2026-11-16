@@ -1,0 +1,60 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "AVR: Build active asm file",
+            "type": "shell",
+            "command": "avr-gcc",
+            "args": [
+                "-mmcu=atmega328p",
+                "-x",
+                "assembler",
+                "-nostdlib",
+                "-g",
+                "-Wl,-e,_start",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.elf",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "AVR: Start simulator",
+            "type": "shell",
+            "dependsOn": "AVR: Build active asm file",
+            "command": "simavr",
+            "args": [
+                "-g",
+                "-m",
+                "atmega328p",
+                "-f",
+                "16000000",
+                "${fileDirname}/${fileBasenameNoExtension}.elf"
+            ],
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "simavr",
+                "pattern": {
+                    "regexp": "^$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".*",
+                    "endsPattern": ".*"
+                }
+            }
+        },
+        {
+            "label": "AVR: Stop simulator",
+            "type": "shell",
+            "command": "pkill -TERM -f \"simavr.*${fileDirname}/${fileBasenameNoExtension}.elf\" || true",
+            "problemMatcher": []
+        }
+    ]
+}
