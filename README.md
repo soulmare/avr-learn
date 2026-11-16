@@ -48,19 +48,6 @@ AVR: Debug active asm file
 VS Code will build the active file, start `simavr` as a GDB server, connect
 with `avr-gdb`, and stop at `_start`.
 
-Use the Debug toolbar to pause, continue, restart, and step through
-instructions. Set a breakpoint on the `stop` label with the Debug Console if
-the editor's breakpoint toggle does not work for the assembly file:
-
-```gdb
--exec break stop
-```
-
-If the program is running, pause it before setting the breakpoint. The
-`-exec` prefix is needed because VS Code's Debug Console evaluates plain input
-as an expression; the standalone `avr-gdb` console uses `break stop` without
-the prefix.
-
 ### Inspect registers and memory
 
 Add these expressions to the **Watch** section of the Run and Debug panel to
@@ -73,18 +60,6 @@ $pc
 $sp
 $sreg
 ```
-
-AVR-specific GDB commands can be entered in the Debug Console with `-exec`:
-
-```gdb
--exec p/x $r20
--exec p/x $r21
--exec p/x $pc
--exec x/1bx 0x800100
-```
-
-After the `add r20, r21` instruction, `$r20` should be `0x38`. The value at
-SRAM address `0x800100` should also be `0x38` after the `sts` instruction.
 
 ### End a VS Code session
 
