@@ -3,3 +3,10 @@
 .vscode/*
 !.vscode/launch.json
 !.vscode/tasks.json
+
+# Generated AVR build artifacts
+*.elf
+*.o
+*.hex
+*.map
+*.lst
