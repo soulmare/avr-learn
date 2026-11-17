@@ -3,6 +3,8 @@
 This project contains small AVR assembly exercises. The examples below use an
 ATmega328P running at 16 MHz.
 
+The exercises and chapter names are based on *The AVR Microcontroller and Embedded Systems: Using Assembly and C* by Muhammad Ali Mazidi, Sarmad Naimi, and Sepehr Naimi.
+
 ## VS Code workflow
 
 The project includes VS Code tasks and a debugger configuration that preserve
