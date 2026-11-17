@@ -1,6 +1,3 @@
-.global _start
-
-_start:
     ldi r20, 0x25
     ldi r21, 0x13
     add r20, r21

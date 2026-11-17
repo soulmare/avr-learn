@@ -13,11 +13,6 @@
             "stopAtEntry": true,
             "setupCommands": [
                 {
-                    "description": "Stop at the exercise entry point",
-                    "text": "break _start",
-                    "ignoreFailures": false
-                },
-                {
                     "description": "Show the next instruction while stepping",
                     "text": "set disassemble-next-line on",
                     "ignoreFailures": true

@@ -46,7 +46,7 @@ AVR: Debug active asm file
 ```
 
 VS Code will build the active file, start `simavr` as a GDB server, connect
-with `avr-gdb`, and stop at `_start`.
+with `avr-gdb`, and stop at the program entry point.
 
 ### Inspect registers and memory
 
@@ -77,7 +77,6 @@ From the project root, compile an assembly source file with debug information:
 
 ```sh
 avr-gcc -mmcu=atmega328p -x assembler -nostdlib -g \
-  -Wl,-e,_start \
   -o chapter-03/exercise-01.elf \
   chapter-03/exercise-01.asm
 ```
@@ -88,7 +87,8 @@ The important options are:
 - `-x assembler` treats the input as assembly source.
 - `-nostdlib` avoids linking the standard libraries.
 - `-g` includes source-level debug information.
-- `-Wl,-e,_start` sets `_start` as the entry point.
+- With no startup library or explicit entry option, the first instruction is
+  placed at address `0`, the AVR reset-vector address.
 
 ### Run the simulator
 
@@ -113,7 +113,7 @@ Connect GDB to the simulator and stop at the program entry point:
 
 ```gdb
 target remote localhost:1234
-break _start
+break *0
 continue
 ```
 
@@ -131,7 +131,7 @@ nexti                 # step over the current instruction
 continue              # run until the next breakpoint
 info breakpoints      # list breakpoints
 delete                # delete all breakpoints
-disassemble _start,stop
+disassemble 0,stop
 ```
 
 For the current source location and instruction:
