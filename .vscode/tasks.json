@@ -8,7 +8,7 @@
             "args": [
                 "-mmcu=atmega328p",
                 "-x",
-                "assembler",
+                "assembler-with-cpp",
                 "-nostdlib",
                 "-g",
                 "-o",
