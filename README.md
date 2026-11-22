@@ -12,15 +12,18 @@ The exercises in this repository are adapted to the GNU toolchain.
 
 The project includes VS Code tasks and a debugger configuration that preserve
 the command-line workflow while allowing you to build and debug from the VS
-Code interface. The Microsoft C/C++ extension is required.
+Code interface. Install these extensions for the complete experience:
+
+- **C/C++** (`ms-vscode.cpptools`) — required for the `cppdbg` debugger
+  configuration.
+- **AVR Support** (`rockcat.avr-support`) — provides AVR assembly language
+  support and syntax highlighting.
+- **Memory Inspector** (`eclipse-cdt.memory-inspector`) — provides the memory
+  viewer while debugging.
 
 ### Open the project
 
-Open the project folder:
-
-```text
-/home/alex/Documents/work/learn-avr
-```
+Open the project folder.
 
 Open the assembly file you want to work on, for example:
 
