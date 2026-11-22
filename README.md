@@ -5,6 +5,11 @@ ATmega328P running at 16 MHz.
 
 The exercises and chapter names are based on *The AVR Microcontroller and Embedded Systems: Using Assembly and C* by Muhammad Ali Mazidi, Sarmad Naimi, and Sepehr Naimi.
 
+The book uses the Atmel/Microchip AVR assembler dialect, while this project
+builds with GNU AVR assembler through `avr-gcc`. Some syntax differs between
+the dialects.
+The exercises in this repository are adapted to the GNU toolchain.
+
 The project includes VS Code tasks and a debugger configuration that preserve
 the command-line workflow while allowing you to build and debug from the VS
 Code interface. The Microsoft C/C++ extension is required.

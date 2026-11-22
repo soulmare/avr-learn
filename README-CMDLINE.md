@@ -7,7 +7,7 @@ The following sections describe the original workflow using raw AVR tools.
 From the project root, compile an assembly source file with debug information:
 
 ```sh
-avr-gcc -mmcu=atmega328p -x assembler -nostdlib -g \
+avr-gcc -mmcu=atmega328p -x assembler-with-cpp -nostdlib -g \
   -o chapter-03/exercise-01.elf \
   chapter-03/exercise-01.asm
 ```
@@ -15,7 +15,8 @@ avr-gcc -mmcu=atmega328p -x assembler -nostdlib -g \
 The important options are:
 
 - `-mmcu=atmega328p` selects the target AVR device.
-- `-x assembler` treats the input as assembly source.
+- `-x assembler-with-cpp` treats the input as assembly source and preprocesses
+  AVR device-header macros such as `RAMEND` and `_SFR_IO_ADDR(...)`.
 - `-nostdlib` avoids linking the standard libraries.
 - `-g` includes source-level debug information.
 - With no startup library or explicit entry option, the first instruction is
