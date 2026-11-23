@@ -45,6 +45,15 @@ AVR: Build active asm file
 This runs the same `avr-gcc` command described in the command-line workflow.
 The resulting ELF file is written beside the active assembly file.
 
+### Inspect the listing
+
+The ELF file contains the assembled program and debug information. Use
+`avr-objdump` to view the disassembly together with the original source:
+
+```sh
+avr-objdump -d -S chapter-04/exercise-09.stack-portb-toggle-delay.elf
+```
+
 ### Start debugging in VS Code
 
 Press `F5` and choose:
