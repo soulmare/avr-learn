@@ -72,11 +72,7 @@ When adding or adapting an example from the book:
 
 7. Preserve the book's control flow, but use GNU assembler syntax and the
    existing repository conventions: four-space indentation, uppercase
-   instruction mnemonics, lowercase register names, descriptive labels, and a
-   `stop` infinite loop at the end of the source. A program that deliberately
-   loops forever during normal operation may still keep `BACK` or another loop
-   label for that active loop, followed by the standard `stop` terminator after
-   subroutines.
+   instruction mnemonics, lowercase register names, descriptive labels.
 
 8. Keep delay routines as ordinary labels in the text section unless the
    example specifically demonstrates placement at another address. If the
