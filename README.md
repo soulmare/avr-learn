@@ -10,6 +10,10 @@ builds with GNU AVR assembler through `avr-gcc`. Some syntax differs between
 the dialects.
 The exercises in this repository are adapted to the GNU toolchain.
 
+The book targets the ATmega32; this project targets the ATmega328P. Their
+memory maps differ (`RAMEND` is `0x085F` vs. `0x08FF`), so use `<avr/io.h>`
+instead of `M32DEF.INC`.
+
 The project includes VS Code tasks and a debugger configuration that preserve
 the command-line workflow while allowing you to build and debug from the VS
 Code interface. Install these extensions for the complete experience:

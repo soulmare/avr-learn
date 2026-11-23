@@ -15,6 +15,12 @@ GNU `avr-gcc` and GNU AVR assembler.
 - Build input type: `assembler-with-cpp`
 - Programs start at the reset-vector address, `0x0000`
 
+The book commonly targets the ATmega32, while this project targets the
+ATmega328P. Although both have 32 KB Flash, 2 KB SRAM, and 1 KB EEPROM, their
+data-memory maps differ: ATmega32 uses `RAMEND = 0x085F`, while ATmega328P uses
+`RAMEND = 0x08FF`. Do not use book device definitions such as `M32DEF.INC` as-is
+for this project; adapt them to the ATmega328P definitions from `<avr/io.h>`.
+
 ## Adapting book examples
 
 When adding or adapting an example from the book:
