@@ -36,6 +36,10 @@ When adding or adapting an example from the book:
    adjust comments only when needed to explain a GNU assembler or
    ATmega328P-specific change.
 
+   If the provided snippet includes an exercise description, place that
+   description at the beginning of the assembly file as header comments,
+   formatted with semicolons.
+
    When a copied example has comments broken onto separate lines even though
    they belong to the preceding instruction, restore them as inline comments
    on that instruction. Keep standalone section or subroutine comments on
