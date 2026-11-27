@@ -45,6 +45,9 @@ When adding or adapting an example from the book:
    on that instruction. Keep standalone section or subroutine comments on
    separate lines.
 
+   When suitable, align inline comments on neighboring instructions to the
+   same column.
+
 3. Do not add behavioral, initialization, or hardware-configuration code that
    is absent from the book example unless the user explicitly requests it.
    Adapt syntax and identifiers as required for the current toolchain, but
